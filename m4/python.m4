@@ -92,10 +92,10 @@ AC_DEFUN([AC_MULTILIB],
     for searchdir in $searchpath; do
       if test -d "$searchdir"; then
         case "$searchdir" in
-          */lib64/ | */lib64 ) libdirsuffix=64 ;;
+          /lib/x86_64-linux-gnu/ | /lib/x86_64-linux-gnu ) libdirsuffix=/x86_64-linux-gnu ;;
           *) searchdir=`cd "$searchdir" && pwd`
              case "$searchdir" in
-               */lib64 ) libdirsuffix=64 ;;
+               /lib/x86_64-linux-gnu ) libdirsuffix=/x86_64-linux-gnu ;;
              esac ;;
         esac
       fi
