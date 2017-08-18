@@ -93,9 +93,9 @@ XDT_CHECK_PACKAGE([GOBJECT], [gobject-2.0], [2.6.0])
 XDT_CHECK_PACKAGE([PYGTK], [pygtk-2.0], [2.6.0])
 XDT_CHECK_PACKAGE([PYGOBJECT], [pygobject-2.0], [2.16.0])
 
-PYTHON_CFLAGS="`python-config --includes`"
-PYTHON_LIBS="`python-config --libs`"
-PYTHON_LDFLAGS="`python-config --ldflags`"
+PYTHON_CFLAGS="`python2-config --includes`"
+PYTHON_LIBS="`python2-config --libs`"
+PYTHON_LDFLAGS="`python2-config --ldflags`"
 
 AC_SUBST(PYTHON_CFLAGS)
 AC_SUBST(PYTHON_LIBS)
@@ -116,7 +116,7 @@ AC_SUBST(PYGOBJECT_DEFSDIR)
 AC_MSG_RESULT($PYGOBJECT_DEFSDIR)
 
 AC_MSG_CHECKING(for pygtk codegen)
-PYGTK_CODEGEN="/usr/bin/python `$PKG_CONFIG --variable=codegendir pygobject-2.0`/codegen.py"
+PYGTK_CODEGEN="$PYTHON `$PKG_CONFIG --variable=codegendir pygobject-2.0`/codegen.py"
 AC_SUBST(PYGTK_CODEGEN)
 AC_MSG_RESULT($PYGTK_CODEGEN)
 
